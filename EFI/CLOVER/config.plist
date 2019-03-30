@@ -270,7 +270,7 @@
 			<key>#UseSystemIO</key>
 			<false/>
 			<key>DropOem</key>
-			<false/>
+			<true/>
 			<key>EnableC2</key>
 			<true/>
 			<key>EnableC4</key>
@@ -304,6 +304,8 @@
 		<integer>0</integer>
 		<key>#XMPDetection</key>
 		<string>-1</string>
+		<key>Arguments</key>
+		<string>kext-dev-mode=1 dart=0 darkwake=0 nvda_drv=1</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -325,7 +327,7 @@
 		<key>StrictHibernate</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>5</integer>
+		<integer>-1</integer>
 	</dict>
 	<key>BootGraphics</key>
 	<dict>
@@ -357,6 +359,12 @@
 		<key>#Type</key>
 		<string>0x0201</string>
 		<key>#UseARTFrequency</key>
+		<true/>
+		<key>C2</key>
+		<true/>
+		<key>C4</key>
+		<true/>
+		<key>C6</key>
 		<true/>
 	</dict>
 	<key>Devices</key>
@@ -735,6 +743,8 @@
 		<false/>
 		<key>#Hide</key>
 		<array>
+			<string>Preboot</string>
+			<string>Recovery</string>
 			<string>Windows</string>
 			<string>BOOTX64.EFI</string>
 		</array>
@@ -762,16 +772,37 @@
 		</dict>
 		<key>#TextOnly</key>
 		<false/>
+		<key>CustomIcons</key>
+		<false/>
 		<key>EmbeddedThemeType</key>
 		<string>Daytime</string>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+		</array>
+		<key>KbdPrevLang</key>
+		<false/>
 		<key>PlayAsync</key>
 		<false/>
+		<key>Scan</key>
+		<dict>
+			<key>Entries</key>
+			<true/>
+			<key>Legacy</key>
+			<false/>
+			<key>Linux</key>
+			<false/>
+			<key>Tool</key>
+			<true/>
+		</dict>
 		<key>ScreenResolution</key>
-		<string>1280x1024</string>
+		<string>1920x1080</string>
 		<key>ShowOptimus</key>
 		<false/>
+		<key>TextOnly</key>
+		<false/>
 		<key>Theme</key>
-		<string>metal</string>
+		<string>simple_theme</string>
 		<key>Timezone</key>
 		<integer>3</integer>
 	</dict>
@@ -846,13 +877,12 @@
 			<string>0x1006</string>
 			<key>#VideoInputSignal</key>
 			<string>0xA1</string>
-		</dict>
-		<key>Inject</key>
-		<dict>
-			<key>NVidia</key>
+			<key>Inject</key>
 			<false/>
 		</dict>
-		<key>NvidiaNoEFI</key>
+		<key>LoadVBios</key>
+		<true/>
+		<key>NvidiaGeneric</key>
 		<true/>
 	</dict>
 	<key>KernelAndKextPatches</key>
@@ -1187,7 +1217,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>D25321300GUF8YL1H</string>
+		<string>D25501501GUF8YLCB</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -1217,9 +1247,9 @@
 		<key>ProductName</key>
 		<string>iMac14,2</string>
 		<key>SerialNumber</key>
-		<string>D25KRTZRF8JC</string>
+		<string>D25P23Z8F8JC</string>
 		<key>SmUUID</key>
-		<string>40F94136-8EF9-4D6F-82A0-926F7B343852</string>
+		<string>EDF26646-22F6-4E70-B7EB-A8AB8E24F881</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
@@ -1233,13 +1263,9 @@
 		<false/>
 		<key>#NvidiaWeb</key>
 		<false/>
-		<key>CustomUUID</key>
-		<string>992D66F6-3EB2-4E08-9B9B-9C8EC6E8E63E</string>
 		<key>InjectKexts</key>
 		<string>Detect</string>
 		<key>InjectSystemID</key>
-		<true/>
-		<key>NoCaches</key>
 		<true/>
 	</dict>
 </dict>
